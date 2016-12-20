@@ -1,0 +1,20 @@
+version: '2'
+services:
+    mongo:
+        image: "mongo"
+        ports:
+            - "27017:27017"
+    amqpserver:
+        image: "rabbitmq"
+        ports:
+            - "5672:5672"
+    contact_service:
+        build: "./contact-service"
+    api_gateway:
+        build: "./api-gateway"
+        ports:
+            -"5000:5000"
+    server:
+        build: "./nginx"
+        ports:
+            - "80:80"
