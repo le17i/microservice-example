@@ -9,7 +9,7 @@
   "author": "Leandro Dias <ledias.17@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "amqp": "^0.2.6",
+    "amqplib": "^0.5.1",
     "mongoose": "^4.7.4"
   }
 }
