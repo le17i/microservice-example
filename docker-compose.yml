@@ -10,11 +10,15 @@ services:
             - "5672:5672"
     contact_service:
         build: "./contact-service"
+        links:
+            -"mongo:mongo"
     api_gateway:
         build: "./api-gateway"
         ports:
             -"5000:5000"
     server:
         build: "./nginx"
+        links:
+            -"api_gateway:api_gateway"
         ports:
             - "80:80"
